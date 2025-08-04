@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Osito con Carta</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            background: #001f3d;
+            /* Cielo oscuro */
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(to top, #001f3d, #0d325b);
+            flex-direction: column;
+            text-align: center;
+        }
+        /* Título "Tócame" */
+        
+        h1 {
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            z-index: 3;
+        }
+        /* Estrellas animadas */
+        
+        .estrella {
+            position: absolute;
+            border-radius: 50%;
+            background-color: white;
+            opacity: 0.7;
+            animation: parpadeo 2s infinite alternate, movimiento 10s infinite linear;
+        }
+        /* Animación para el parpadeo de las estrellas */
+        
+        @keyframes parpadeo {
+            0% {
+                opacity: 0.2;
+                transform: scale(0.8);
+            }
+            100% {
+                opacity: 0.9;
+                transform: scale(1);
+            }
+        }
+        /* Animación para el movimiento de las estrellas */
+        
+        @keyframes movimiento {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(100px, 100px);
+                /* Mueve la estrella a 100px a la derecha y abajo */
+            }
+        }
+        /* Crear múltiples estrellas con diferentes tamaños y posiciones */
+        
+        .estrella:nth-child(1) {
+            width: 2px;
+            height: 2px;
+            top: 5%;
+            left: 10%;
+            animation-duration: 2s, 8s;
+        }
+        
+        .estrella:nth-child(2) {
+            width: 1.5px;
+            height: 1.5px;
+            top: 10%;
+            left: 30%;
+            animation-duration: 1.8s, 10s;
+        }
+        
+        .estrella:nth-child(3) {
+            width: 3px;
+            height: 3px;
+            top: 25%;
+            left: 50%;
+            animation-duration: 2.2s, 9s;
+        }
+        
+        .estrella:nth-child(4) {
+            width: 2px;
+            height: 2px;
+            top: 35%;
+            left: 70%;
+            animation-duration: 1.5s, 8s;
+        }
+        
+        .estrella:nth-child(5) {
+            width: 1px;
+            height: 1px;
+            top: 40%;
+            left: 80%;
+            animation-duration: 2.1s, 7s;
+        }
+        
+        .estrella:nth-child(6) {
+            width: 2px;
+            height: 2px;
+            top: 50%;
+            left: 20%;
+            animation-duration: 1.9s, 10s;
+        }
+        
+        .estrella:nth-child(7) {
+            width: 3px;
+            height: 3px;
+            top: 15%;
+            left: 90%;
+            animation-duration: 2.3s, 9s;
+        }
+        
+        .estrella:nth-child(8) {
+            width: 2px;
+            height: 2px;
+            top: 60%;
+            left: 10%;
+            animation-duration: 1.7s, 8s;
+        }
+        
+        .estrella:nth-child(9) {
+            width: 1.5px;
+            height: 1.5px;
+            top: 55%;
+            left: 80%;
+            animation-duration: 1.6s, 7s;
+        }
+        
+        .estrella:nth-child(10) {
+            width: 2px;
+            height: 2px;
+            top: 70%;
+            left: 40%;
+            animation-duration: 1.9s, 10s;
+        }
+        
+        .estrella:nth-child(11) {
+            width: 1px;
+            height: 1px;
+            top: 80%;
+            left: 60%;
+            animation-duration: 1.8s, 9s;
+        }
+        
+        .estrella:nth-child(12) {
+            width: 2px;
+            height: 2px;
+            top: 25%;
+            left: 65%;
+            animation-duration: 2s, 8s;
+        }
+        
+        .estrella:nth-child(13) {
+            width: 1px;
+            height: 1px;
+            top: 50%;
+            left: 90%;
+            animation-duration: 2.2s, 7s;
+        }
+        
+        .estrella:nth-child(14) {
+            width: 2.5px;
+            height: 2.5px;
+            top: 15%;
+            left: 50%;
+            animation-duration: 2.4s, 9s;
+        }
+        
+        .estrella:nth-child(15) {
+            width: 1.5px;
+            height: 1.5px;
+            top: 65%;
+            left: 20%;
+            animation-duration: 2s, 10s;
+        }
+        
+        .estrella:nth-child(16) {
+            width: 2px;
+            height: 2px;
+            top: 10%;
+            left: 60%;
+            animation-duration: 1.6s, 8s;
+        }
+        
+        .estrella:nth-child(17) {
+            width: 1px;
+            height: 1px;
+            top: 75%;
+            left: 30%;
+            animation-duration: 2.5s, 9s;
+        }
+        
+        .estrella:nth-child(18) {
+            width: 3px;
+            height: 3px;
+            top: 35%;
+            left: 15%;
+            animation-duration: 1.8s, 7s;
+        }
+        
+        .estrella:nth-child(19) {
+            width: 2px;
+            height: 2px;
+            top: 60%;
+            left: 5%;
+            animation-duration: 1.9s, 10s;
+        }
+        
+        .estrella:nth-child(20) {
+            width: 1px;
+            height: 1px;
+            top: 85%;
+            left: 50%;
+            animation-duration: 2.1s, 8s;
+        }
+        /* Osito y carta */
+        
+        #osito {
+            position: relative;
+            z-index: 2;
+            margin-bottom: 20px;
+            /* Espacio debajo del osito */
+        }
+        
+        #osito img {
+            width: 250px;
+            cursor: pointer;
+        }
+        
+        #mensaje {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            max-width: 80%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Título "Tócame" -->
+    <h1>Tócame</h1>
+
+    <!-- Estrellas en el fondo -->
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+    <div class="estrella"></div>
+
+    <!-- Osito con la carta -->
+    <div id="osito">
+        <img src="C:\Users\alcal\Downloads\carta\oso.png" alt="Osito con Carta" onclick="mostrarMensaje()" />
+    </div>
+
+    <!-- Mensaje que aparecerá al hacer clic -->
+    <div id="mensaje">eres lo mas lindo que me a pasado te amo mucho y aunque no soy bueno con las palabras quiero que sepas que me gustas mucho y aunque no sea bueno confiando eres la persona que quiero en mi vida</div>
+
+    <script>
+        function mostrarMensaje() {
+            document.getElementById('mensaje').style.display = 'block';
+        }
+    </script>
+
+</body>
+
+</html>
